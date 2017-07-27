@@ -1,0 +1,42 @@
+﻿@model Assignment.Models.UserDetail
+
+<h2>User Detail</h2>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Location</th>
+            <th>Avatar</th>
+            <th>Repos</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            @if (Model != null)
+            {
+                <td>@Model.login</td>
+                <td>@Model.location</td>
+                <td>
+                    <img src="@Model.avatar_url" alt="@Model.login" class="avatar"/>
+                </td>
+                <td>
+                
+                    @foreach (var item in Model.detail)
+                    {
+
+                        <p>@item.stargazers_count</p>
+
+
+                    }
+                </td>
+             
+            }
+        </tr>
+
+    </tbody>
+</table>
+
+
